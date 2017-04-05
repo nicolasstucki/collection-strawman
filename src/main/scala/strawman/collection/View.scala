@@ -44,7 +44,7 @@ object View {
         def hasNext: Boolean = i < n
         def next(): A = {
           i = i + 1
-          if (i <= n) elem else Iterator.empty.next()
+          if (i <= n) elem.asInstanceOf[A] else Iterator.empty.next()
         }
       }
     override def knownSize: Int = n
